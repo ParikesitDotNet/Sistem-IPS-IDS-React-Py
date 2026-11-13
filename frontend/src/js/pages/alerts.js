@@ -141,7 +141,7 @@ export async function renderAlertsPage() {
                     }">${alert.status}</span>
                   </td>
                   <td class="py-3.5 px-4 text-right" onclick="event.stopPropagation()">
-                    <button class="px-2.5 py-1 text-[11px] font-semibold rounded-lg bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/20 transition-colors inspect-btn" data-id="${alert.id}">
+                    <button class="px-2.5 py-1 text-[11px] font-medium rounded-md bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors inspect-btn" data-id="${alert.id}">
                       Inspect
                     </button>
                   </td>

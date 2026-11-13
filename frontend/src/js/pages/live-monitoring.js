@@ -24,7 +24,7 @@ export function renderLiveMonitoringPage() {
       <div class="cyber-card p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <div class="flex items-center gap-2">
-            <span class="w-3 h-3 rounded-full bg-emerald-500 animate-ping"></span>
+            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
             <h3 class="text-base font-bold text-slate-900 dark:text-white">Live Packet Inspection Stream</h3>
           </div>
           <p class="text-xs text-slate-500 dark:text-slate-400 mt-1">Real-time deep packet inspection (DPI) ingested from Suricata AF_PACKET ring buffers</p>
@@ -116,7 +116,7 @@ export function renderLiveMonitoringPage() {
       <td class="py-2 px-3 text-slate-300 font-semibold">${packet.protocol}</td>
       <td class="py-2 px-3 text-slate-400">${packet.length}</td>
       <td class="py-2 px-3">${createStatusBadge(packet.action)}</td>
-      <td class="py-2 px-3 font-semibold ${packet.threatLevel === 'CRITICAL' ? 'text-rose-400 animate-pulse' : packet.threatLevel === 'SUSPICIOUS' ? 'text-amber-400' : 'text-slate-500'}">
+      <td class="py-2 px-3 font-semibold ${packet.threatLevel === 'CRITICAL' ? 'text-rose-400 font-bold' : packet.threatLevel === 'SUSPICIOUS' ? 'text-amber-400' : 'text-slate-500'}">
         ${packet.threatLevel}
       </td>
     `;

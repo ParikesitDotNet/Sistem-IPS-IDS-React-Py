@@ -1,36 +1,31 @@
 /**
  * Reusable Card Components
- * Styled with modern cybersecurity aesthetics matching the reference image.
+ * Grounded, minimal SOC styling without artificial blur halos or neon glows.
  */
 
 export function createMetricCard({
   title,
   value,
   changeText,
-  changeType = 'neutral', // 'positive', 'negative', 'neutral', 'critical'
-  icon = '',
-  actionMenuId = '',
-  sparklineId = ''
+  changeType = 'neutral',
+  icon = ''
 }) {
   const badgeColors = {
-    positive: 'text-emerald-400 bg-emerald-950/40 border-emerald-800/40',
-    negative: 'text-rose-400 bg-rose-950/40 border-rose-800/40',
-    critical: 'text-rose-400 bg-rose-950/60 border-rose-700/60 animate-pulse',
-    warning: 'text-amber-400 bg-amber-950/40 border-amber-800/40',
-    neutral: 'text-blue-400 bg-blue-950/30 border-blue-800/30'
+    positive: 'text-emerald-400 bg-emerald-950/30 border-emerald-900/50',
+    negative: 'text-rose-400 bg-rose-950/30 border-rose-900/50',
+    critical: 'text-rose-400 bg-rose-950/40 border-rose-800/60',
+    warning: 'text-amber-400 bg-amber-950/30 border-amber-900/50',
+    neutral: 'text-slate-400 bg-slate-900/40 border-slate-800'
   };
 
   const badgeClass = badgeColors[changeType] || badgeColors.neutral;
 
   return `
-    <div class="cyber-card p-5 relative overflow-hidden group hover:border-slate-600/60 transition-all duration-300">
-      <!-- Glow ambient backdrop on hover -->
-      <div class="absolute -right-12 -top-12 w-28 h-28 bg-blue-500/5 rounded-full blur-2xl group-hover:bg-blue-500/10 transition-all"></div>
-      
+    <div class="cyber-card p-5 flex flex-col justify-between">
       <div class="flex items-center justify-between mb-3">
-        <span class="text-xs font-medium uppercase tracking-wider text-slate-400 dark:text-slate-400">${title}</span>
-        <div class="flex items-center gap-1.5 text-slate-500 hover:text-slate-300 transition-colors cursor-pointer">
-          ${icon || `<svg class="w-4 h-4 opacity-70" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>`}
+        <span class="text-xs font-medium text-slate-400">${title}</span>
+        <div class="flex items-center text-slate-500">
+          ${icon || `<svg class="w-4 h-4 opacity-50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>`}
         </div>
       </div>
 
@@ -40,30 +35,28 @@ export function createMetricCard({
 
       ${changeText ? `
         <div class="mt-3 flex items-center gap-2">
-          <span class="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded-full border ${badgeClass}">
+          <span class="inline-flex items-center gap-1 text-[11px] font-medium px-2 py-0.5 rounded border ${badgeClass}">
             ${changeText}
           </span>
         </div>
       ` : ''}
-
-      ${sparklineId ? `<div id="${sparklineId}" class="mt-2 h-6 w-full"></div>` : ''}
     </div>
   `;
 }
 
-export function createStatusBadge(status, type = 'default') {
+export function createStatusBadge(status) {
   const map = {
-    online: 'bg-emerald-500/15 text-emerald-400 border border-emerald-500/30',
-    active: 'bg-blue-500/15 text-blue-400 border border-blue-500/30',
-    critical: 'bg-rose-500/20 text-rose-400 border border-rose-500/40 animate-pulse',
-    high: 'bg-orange-500/20 text-orange-400 border border-orange-500/40',
-    medium: 'bg-amber-500/15 text-amber-400 border border-amber-500/30',
-    low: 'bg-cyan-500/15 text-cyan-400 border border-cyan-500/30',
-    dropped: 'bg-rose-950/60 text-rose-300 border border-rose-800/60 font-mono',
-    blocked: 'bg-purple-950/60 text-purple-300 border border-purple-800/60 font-mono',
-    alerted: 'bg-amber-950/60 text-amber-300 border border-amber-800/60 font-mono',
-    passed: 'bg-emerald-950/50 text-emerald-300 border border-emerald-800/50 font-mono',
-    quarantined: 'bg-rose-950/80 text-rose-200 border border-rose-700 font-semibold'
+    online: 'bg-emerald-950/30 text-emerald-400 border border-emerald-800/40',
+    active: 'bg-blue-950/30 text-blue-400 border border-blue-800/40',
+    critical: 'bg-rose-950/40 text-rose-400 border border-rose-800/50 font-semibold',
+    high: 'bg-orange-950/30 text-orange-400 border border-orange-800/40',
+    medium: 'bg-amber-950/30 text-amber-400 border border-amber-800/40',
+    low: 'bg-slate-800 text-slate-300 border border-slate-700',
+    dropped: 'bg-rose-950/40 text-rose-300 border border-rose-800/40 font-mono',
+    blocked: 'bg-purple-950/40 text-purple-300 border border-purple-800/40 font-mono',
+    alerted: 'bg-amber-950/40 text-amber-300 border border-amber-800/40 font-mono',
+    passed: 'bg-slate-800 text-emerald-400 border border-slate-700 font-mono',
+    quarantined: 'bg-rose-950/50 text-rose-300 border border-rose-800/60 font-semibold'
   };
 
   const style = map[status.toLowerCase()] || 'bg-slate-800 text-slate-300 border border-slate-700';

@@ -15,7 +15,7 @@ export function openModal({ title, contentHtml, actionsHtml = '', maxWidth = 'ma
   modalEl.id = 'active-modal-container';
 
   modalEl.innerHTML = `
-    <div class="cyber-card w-full ${maxWidth} bg-white dark:bg-[#131826] border border-slate-300 dark:border-slate-700/80 shadow-2xl rounded-2xl overflow-hidden flex flex-col max-h-[90vh]">
+    <div class="cyber-card w-full ${maxWidth} bg-white dark:bg-[#131826] border border-slate-200 dark:border-[#1e2638] shadow-xl rounded-xl overflow-hidden flex flex-col max-h-[90vh]">
       <!-- Modal Header -->
       <div class="flex items-center justify-between px-6 py-4 border-b border-slate-200 dark:border-slate-800">
         <h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">

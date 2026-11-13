@@ -137,8 +137,8 @@ export async function renderOverviewPage() {
         <div class="lg:col-span-7 cyber-card p-5">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-2.5">
-              <div class="p-2 rounded-xl bg-blue-500/10 text-blue-400 border border-blue-500/20">
-                ${getIcon('server', 'w-5 h-5')}
+              <div class="p-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700/60">
+                ${getIcon('server', 'w-4 h-4')}
               </div>
               <div>
                 <h3 class="text-sm font-bold text-slate-900 dark:text-white">IDS/IPS Engine Status</h3>
@@ -146,29 +146,29 @@ export async function renderOverviewPage() {
               </div>
             </div>
             <div class="flex items-center gap-2">
-              <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-ping"></span>
-              <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              <span class="text-xs font-mono font-semibold text-emerald-400 bg-emerald-950/40 px-2 py-0.5 rounded border border-emerald-800/40">
                 ${metrics.engineStatus.status}
               </span>
             </div>
           </div>
 
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800/60">
-              <div class="text-[11px] text-slate-400">Mode</div>
-              <div class="text-sm font-bold font-mono text-blue-400 mt-0.5">${metrics.engineStatus.mode}</div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#0f1420] border border-slate-200 dark:border-[#1e2638]">
+              <div class="text-[10px] uppercase font-mono text-slate-500">Mode</div>
+              <div class="text-xs font-bold font-mono text-slate-200 mt-0.5">${metrics.engineStatus.mode}</div>
             </div>
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800/60">
-              <div class="text-[11px] text-slate-400">Rules Loaded</div>
-              <div class="text-sm font-bold font-mono text-slate-200 mt-0.5">${metrics.engineStatus.rulesLoaded.toLocaleString()}</div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#0f1420] border border-slate-200 dark:border-[#1e2638]">
+              <div class="text-[10px] uppercase font-mono text-slate-500">Rules Loaded</div>
+              <div class="text-xs font-bold font-mono text-slate-200 mt-0.5">${metrics.engineStatus.rulesLoaded.toLocaleString()}</div>
             </div>
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800/60">
-              <div class="text-[11px] text-slate-400">Drop Rate</div>
-              <div class="text-sm font-bold font-mono text-emerald-400 mt-0.5">${metrics.engineStatus.dropRate}</div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#0f1420] border border-slate-200 dark:border-[#1e2638]">
+              <div class="text-[10px] uppercase font-mono text-slate-500">Drop Rate</div>
+              <div class="text-xs font-bold font-mono text-emerald-400 mt-0.5">${metrics.engineStatus.dropRate}</div>
             </div>
-            <div class="p-3 rounded-xl bg-slate-50 dark:bg-slate-900/50 border border-slate-200 dark:border-slate-800/60">
-              <div class="text-[11px] text-slate-400">Pkt Latency</div>
-              <div class="text-sm font-bold font-mono text-purple-400 mt-0.5">${metrics.engineStatus.latency}</div>
+            <div class="p-3 rounded-lg bg-slate-50 dark:bg-[#0f1420] border border-slate-200 dark:border-[#1e2638]">
+              <div class="text-[10px] uppercase font-mono text-slate-500">Pkt Latency</div>
+              <div class="text-xs font-bold font-mono text-slate-300 mt-0.5">${metrics.engineStatus.latency}</div>
             </div>
           </div>
         </div>
@@ -177,12 +177,12 @@ export async function renderOverviewPage() {
         <div class="lg:col-span-5 cyber-card p-5">
           <div class="flex items-center justify-between mb-4">
             <div class="flex items-center gap-2">
-              <div class="p-2 rounded-xl bg-purple-500/10 text-purple-400 border border-purple-500/20">
-                ${getIcon('monitoring', 'w-5 h-5')}
+              <div class="p-1.5 rounded-lg bg-slate-800 text-slate-300 border border-slate-700/60">
+                ${getIcon('monitoring', 'w-4 h-4')}
               </div>
               <h3 class="text-sm font-bold text-slate-900 dark:text-white">Sensor Hardware Health</h3>
             </div>
-            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">
+            <span class="text-xs font-mono text-slate-400 bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700">
               Optimal (42°C)
             </span>
           </div>
@@ -265,7 +265,7 @@ export async function renderOverviewPage() {
                   <td class="py-3.5 px-4 font-mono text-slate-300">${alert.proto}</td>
                   <td class="py-3.5 px-4">${createStatusBadge(alert.action)}</td>
                   <td class="py-3.5 px-4 text-right">
-                    <button class="px-2.5 py-1 text-[11px] font-semibold rounded-lg bg-blue-600/10 hover:bg-blue-600/20 text-blue-400 border border-blue-500/20 transition-colors view-alert-btn" data-id="${alert.id}">
+                    <button class="px-2 py-0.5 text-[11px] font-medium rounded bg-slate-800 hover:bg-slate-700 text-slate-200 border border-slate-700 transition-colors view-alert-btn" data-id="${alert.id}">
                       Inspect
                     </button>
                   </td>
