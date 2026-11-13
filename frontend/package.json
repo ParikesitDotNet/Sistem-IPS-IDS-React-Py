@@ -1,4 +1,11 @@
 {
+  "name": "ids-ips-dashboard",
+  "version": "1.0.0",
+  "description": "Enterprise SOC Defense Platform - IDS/IPS Administration Dashboard",
+  "scripts": {
+    "build:css": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css",
+    "watch:css": "tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
+  },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.5",
     "tailwindcss": "^4.3.5"
