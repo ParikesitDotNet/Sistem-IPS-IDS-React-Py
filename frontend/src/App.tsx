@@ -13,8 +13,6 @@ const pages = [
   ["detection-rules", "Detection Rules"],
   ["prevention", "Prevention Policies"],
   ["blocked-events", "Blocked Events"],
-  ["devices", "Devices & Assets"],
-  ["sensors", "Sensors & Engines"],
   ["reports", "Reports & Analytics"],
   ["history", "Event History"],
   ["users", "User Management"],

@@ -8,9 +8,7 @@ import {
   FileClock,
   LayoutDashboard,
   ListChecks,
-  Monitor,
   Radar,
-  RadioTower,
   Settings,
   ShieldAlert,
   ShieldCheck,
@@ -51,13 +49,6 @@ const navigation = [
     items: [
       { title: "Prevention Policies", url: "/prevention", icon: ShieldCheck },
       { title: "Blocked Events", url: "/blocked-events", icon: Ban },
-    ],
-  },
-  {
-    label: "INFRASTRUCTURE",
-    items: [
-      { title: "Devices & Assets", url: "/devices", icon: Monitor },
-      { title: "Sensors & Engines", url: "/sensors", icon: RadioTower },
     ],
   },
   {
