@@ -83,7 +83,7 @@ export function TrafficPage() {
           <CardTitle>Bandwidth Overview</CardTitle>
         </CardHeader>
         <CardContent>
-          <div className="h-[300px]">
+          <div className="h-75">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={traffic}>
                 <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
@@ -114,7 +114,7 @@ export function TrafficPage() {
         </CardHeader>
         <CardContent>
           <div className="grid items-center gap-4 md:grid-cols-2">
-            <div className="h-[240px]">
+            <div className="h-60">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie

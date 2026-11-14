@@ -73,7 +73,7 @@ export function AlertsPage() {
       </div>
 
       <div className="flex flex-wrap gap-3">
-        <div className="relative min-w-[220px] flex-1">
+        <div className="relative min-w-55 flex-1">
           <Search className="absolute left-3 top-2.5 h-4 w-4 text-muted-foreground" />
           <Input
             className="pl-9"

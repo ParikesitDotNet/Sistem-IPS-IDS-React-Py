@@ -89,7 +89,7 @@ export function ReportsPage() {
           </select>
         </CardHeader>
         <CardContent>
-          <div className="h-[280px]">
+          <div className="h-70">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={trend}>
                 <CartesianGrid strokeDasharray="3 3" opacity={0.2} />
